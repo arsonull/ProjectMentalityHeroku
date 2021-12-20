@@ -3,68 +3,47 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Project Mentality App</title>
+    <title>Project Mentality Showcase</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   </head>
   <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">WebSiteName</a>
         </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="index">Home</a></li>
+          <li><a href="documents"></a></li>
+          <li><a href="game">Game</a></li>
+        </ul>
       </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Project Mentality App</div>
-      </div>
+    </nav>
+    <div align="center">
+      <h2>Howdy!</h2>
+      <h4>Welcome to my Project portfolio for Project Mentality. This is a project meant to help people empathize with those that have mental illnesses, by getting into their head and getting them in a similar
+        situation to think in a similar way. For instance, with the Obsessive Compulsive Disorder level, the player is shown an objective to complete, such as getting dressed after waking up. As they complete the
+        objectives shown to them, in the order given, they get points and work towards leaving the house for the day. However, these points are meaningless, as is the order. All that's actually required from the player,
+        is to complete the main objectives, and leave the house. But losing all the points you've worked towards and told to start over feels terrible. Just like breaking out of a rigid behaviour from O.C.D. Obviously
+        not the same feeling, but the similarity is there to provide a bad sensation mentally to breaking a routine, getting the player to believe they absolutely MUST do those tasks in order, until they realize they
+        could just have left after completing those tasks in any order. Thus realizing, they were under a similar thought pattern as those with O.C.D. and can hopefully understand the state of mind they're in.
+      </h4>
+      <br/>
+      <br/>
+      <h2>Reason</h2>
+      <h4>The reason for this project is to help those around me, and others that come across this kind of project. I've known and have contact with a lot of people that have mental illnesses, and it sucks
+        to see them have such little success with personal relationships, just because it's difficult for people to understand them. When my friend is late to hangout because they messed up their routine and had to
+        start over several times, I don't hold it against them because I can understand. But to others who don't understand or can't empathize, they're far more likely to take offense and begin distancing themselves.
+        I wanted to try and create essentially a tool that would help the people that are friends or know someone with a mental illness or disability, to assist in their ability to understand.
+      </h4>
+      <br/>
+      <h2>Approach</h2>
+      <h4>For the objective system, this is all done within a script attached to the player character. In the script, there are two boolean arrays, one for the real objectives, and one for the fake objectives.
+        These often relate to each other for checking progress and if things are in order. I did this since the objectives are boolean in nature, and being able to store all of the objectives progress in those arrays
+        helped tremendously. 
+      </h4>
     </div>
-    <script>
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/ProjectMentalityWebDev.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/ProjectMentalityWebDev.data",
-        frameworkUrl: buildUrl + "/ProjectMentalityWebDev.framework.js",
-        codeUrl: buildUrl + "/ProjectMentalityWebDev.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "Arsonull Studios",
-        productName: "Project Mentality App",
-        productVersion: "0.1",
-      };
-
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        container.className = "unity-mobile";
-        config.devicePixelRatio = 1;
-      } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
-      loadingBar.style.display = "block";
-
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
-    </script>
   </body>
 </html>
