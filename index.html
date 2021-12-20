@@ -11,12 +11,12 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">WebSiteName</a>
+          <a class="navbar-brand" href="#">Project Mentality</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="index">Home</a></li>
+          <li class="active"><a href="index">Home</a></li>
           <li><a href="documents"></a></li>
+          <li><a href="code">Code</a></li>
           <li><a href="game">Game</a></li>
         </ul>
       </div>
@@ -42,9 +42,30 @@
       <h2>Approach</h2>
       <h4>For the objective system, this is all done within a script attached to the player character. In the script, there are two boolean arrays, one for the real objectives, and one for the fake objectives.
         These often relate to each other for checking progress and if things are in order. I did this since the objectives are boolean in nature, and being able to store all of the objectives progress in those arrays
-        helped tremendously. 
+        helped tremendously. The camera and player controls are taken from the first person controls asset provided by Unity. I had to do some tweaking with the collider, speed, controls, and camera for it to work 
+        properly in my game however. Most of the assets/models found around the house, including the house itself, are from a asset pack I purchased to have a house I could set up that would look nice. The house came
+        in pieces, and I had to decorate everything myself. In future versions, I would like to completely fill the house, every room with decorations and a purpose. The music is royalty free, and I took a snippet 
+        that sounded like it would loop well, went into FL-Studio and using the inspect and cut tool, created a looping soundtrack with no obvious cuts. The main menu was more function over form. I created a canvas 
+        with several buttons in the form of words. Each would use the Unity Events controller to change the menu or scene in the case of loading a level. I used GitHub Pages for hosting this website along with the 
+        game site. I was at first wanting to host on Azure, but my license got used up. I went to AWS next, but same thing there. So I was forced to try other free services, until I learned of the Pages function for 
+        GitHub and it worked tremendously well.
+      </h4>
+      <br/>
+      <h2>Future Consideration</h2>
+      <h4>There's a lot that I want to add onto this project. I want to add a timer that gets harder and harder to actually leave the house on time while going through objectives in order, as well as add more fake 
+        objectives to distract the player. I also want to add animations and time spent on objectives, so it's not just one click and then leave. There's a lot more than pressing a button to taking a shower for 
+        instace. Perhaps add minigames to some tasks to up the difficulty. This would all add a much needed sense of urgency to the player. I would like to expand in how many levels there are. I already have ideas for 
+        a level about Schizophrenia and ADHD and how I would be able to interpret those into a game. Another pretty big thing I would want to be able to do, is host the game in a way to distribute the local client, 
+        instead of force the player to use the bad WebGL embed. WebGL is really cool, and a fantastic tool for 2D games, but for 3D games, especially in this caliber, it's far better to have a local client. Another 
+        small addition I'd like to add is sound effects for the tasks as well.
+      </h4>
+      <br/>
+      <h2>How to Run</h2>
+      <h4>
+        Currently, you can click on the "Game" button in the navbar above. This will take you to the WebGL version of the game. However, I very much recommend cloning the repository at https://github.com/arsonull/ProjectMentalityApp
+        so that you can download and run a local client instead, for a much better experience. All you should need to do, is download that repository and run the ProjectMentalityApp.exe file. That should boot up the 
+        game, and Unity should take care of any required binaries that are required to run the game. 
       </h4>
     </div>
   </body>
-  <!--Test-->
 </html>
